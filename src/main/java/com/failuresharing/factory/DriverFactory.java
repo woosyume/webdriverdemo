@@ -20,7 +20,7 @@ public class DriverFactory {
 	}
 
     public static WebDriver openPcChromeWebDriver() {
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/woohyeok.kim/Desktop/study/webdriverdemo/chromedriver");
         return new ChromeDriver();
     }
 }
