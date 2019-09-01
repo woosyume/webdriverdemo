@@ -2,15 +2,22 @@ package com.failuresharing.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-/**
- * TopPage
- */
 public class TopPage {
     private WebDriver driver;
 
+    @FindBy(id="loginInner_u")
+    private WebElement usernameField;
+
+    @FindBy(id="loginInner_p")
+    private WebElement passwordField;
+
     public TopPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
     
     public void moveToLoginPage() {
@@ -18,11 +25,11 @@ public class TopPage {
     }
 
     public void inputUserName() {
-        driver.findElement(By.id("loginInner_u")).sendKeys("testuser@gmail.com");
+        usernameField.sendKeys("testuser@gmail.com");
     }
 
     public void inputWrongPassword() {
-        driver.findElement(By.id("loginInner_p")).sendKeys("abcde");
+        passwordField.sendKeys("abcde");
     }
 
     public void clickLoginButton() {
