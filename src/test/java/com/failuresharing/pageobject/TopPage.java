@@ -3,6 +3,7 @@ package com.failuresharing.pageobject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -10,9 +11,11 @@ public class TopPage {
     private WebDriver driver;
 
     @FindBy(id="loginInner_u")
+    @CacheLookup
     private WebElement usernameField;
 
     @FindBy(id="loginInner_p")
+    @CacheLookup
     private WebElement passwordField;
 
     public TopPage(WebDriver driver) {
